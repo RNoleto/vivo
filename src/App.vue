@@ -12,7 +12,7 @@
 <style scoped>
 .title {
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .logo-wrapper {
   width: 80px;
