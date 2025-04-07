@@ -1,19 +1,26 @@
-<!-- src/App.vue -->
 <template>
   <main>
     <div class="logo-wrapper">
       <img src="/icons/vivo.svg" alt="Logo Vivo" />
     </div>
     <h1 class="title">Loja Vivo Itajaí</h1>
+
+    <!-- Renderiza a rota atual -->
     <router-view />
   </main>
+
+  <footer class="footer">
+    <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer">
+      Desenvolvido por Ramon Noleto
+    </a>
+  </footer>
 </template>
 
-<style scoped>
-.title {
-  color: white;
-  margin-bottom: 2rem;
-}
+<script setup>
+</script>
+
+<style>
+/* Apenas estilos específicos do App se precisar */
 .logo-wrapper {
   width: 80px;
   height: 80px;
@@ -22,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1rem; /* Se quiser menos espaço vertical, reduza */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -32,5 +39,3 @@
   object-fit: contain;
 }
 </style>
-
-

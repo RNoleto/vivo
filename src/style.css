@@ -1,35 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/* Remova padding e margin do html e body */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-:root{
+/* Boas práticas: box-sizing global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fonte + fundo gradiente */
+:root {
   font-family: 'Nunito', sans-serif;
-  /* Cores da vivo */
   background: linear-gradient(135deg, #5A50B3 0%, #874DA2 50%, #B24890 100%);
   color: #5A50B3;
 }
 
-h1{
-  margin: 0;
-}
-
-body{
+/* #app é nosso container principal */
+#app {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Faz #app ocupar a tela toda */
   min-height: 100vh;
-  overflow: hidden;
 
+  /* Para centralizar horizontalmente e limitar largura */
   max-width: 700px;
   margin: 0 auto;
+
+  /* Se quiser menos espaço interno, diminua aqui */
   padding: 1rem;
 }
 
-main{
-  transform: translateY(-50px);
+/* MAIN cresce para ocupar o espaço antes do footer */
+main {
+  flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.title{
+section{
+  margin: auto 0;
+}
+
+/* Footer discreto no final */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
   color: white;
-  margin-bottom: 1rem;
+}
+
+/* Títulos */
+.title {
+  color: white;
+  margin-bottom: 1rem; /* Diminua se quiser menos espaço */
+}
+
+h1 {
+  margin: 0;
 }
