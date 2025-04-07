@@ -12,7 +12,7 @@ import Card from '../components/ui/Card.vue';
         <Card text="App Vivo para Android" icon="/icons/android.svg"
             link="https://play.google.com/store/apps/details?id=com.vivo.meuvivo" />
 
-        <Card text="Nossos vendedores" icon="/icons/seller.svg" link="/vendedores" :internal="true" />
+        <!-- <Card text="Nossos vendedores" icon="/icons/seller.svg" link="/vendedores" :internal="true" /> -->
     </section>
 </template>
 
