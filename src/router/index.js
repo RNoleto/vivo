@@ -1,5 +1,5 @@
 // src/router/index.js
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Avaliacoes from '../views/Avaliacoes.vue';
 import Vendedores from '../views/Vendedores.vue';
 
@@ -17,7 +17,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 });
 
