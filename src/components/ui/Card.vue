@@ -12,6 +12,8 @@ defineProps({
     :is="internal ? 'RouterLink' : 'a'"
     :to="internal ? link : undefined"
     :href="!internal ? link : undefined"
+    :target="!internal ? '_blank' : undefined"
+    :rel="!internal ? 'noopener noreferrer' : undefined"
     class="card"
   >
   <div class="icon-wrapper">

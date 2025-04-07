@@ -4,7 +4,7 @@ import Card from '../components/ui/Card.vue';
 
 <template>
     <section>
-        <Card text="Nos avalie no Google" icon="/icons/maps.svg" link="https://www.google.com/maps/place/Vivo" />
+        <Card text="Nos avalie no Google" icon="/icons/maps.svg" link="https://g.co/kgs/C9xaEaS" />
 
         <Card text="App Vivo para iPhone" icon="/icons/apple.svg"
             link="https://apps.apple.com/br/app/meu-vivo/id123456" />
