@@ -69,7 +69,7 @@ footer a:hover {
 /* Títulos */
 .title {
   color: white;
-  margin-bottom: 1rem; /* Diminua se quiser menos espaço */
+  margin-top: 0.5rem;
 }
 
 h1 {
