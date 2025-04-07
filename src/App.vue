@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem; /* Se quiser menos espaço vertical, reduza */
+  margin: 1.5rem auto 0rem; /* Se quiser menos espaço vertical, reduza */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
