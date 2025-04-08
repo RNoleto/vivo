@@ -39,6 +39,12 @@ const vendedores = [
         foto: '/foto/ingrid.webp',
         numero: '5547992876919',
         mensagem: 'Olá, Ingrid! Gostaria de um atendimento.'
+    },
+    {
+        nome: 'Gerusa',
+        foto: '/foto/gerusa.webp',
+        numero: '5547984033499',
+        mensagem: 'Olá, Gerusa! Gostaria de um atendimento.'
     }
 ];
 
