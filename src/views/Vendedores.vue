@@ -12,21 +12,33 @@ const voltar = () => {
 const vendedores = [
     {
         nome: 'Pamella',
-        foto: '/foto/pamella.jpeg',
+        foto: '/foto/pamella.webp',
         numero: '554799143-4460',
         mensagem: 'Olá, Pamella! Gostaria de um atendimento.'
     },
     {
-        nome: 'Juliana Silva',
-        foto: '',
-        numero: '5596988889999',
-        mensagem: 'Olá, Juliana! Gostaria de falar sobre a loja de Itajaí.'
+        nome: 'Crisley',
+        foto: '/foto/crisley.webp',
+        numero: '554799274-2740',
+        mensagem: 'Olá, Crisley! Gostaria de um atendimento.'
     },
     {
-        nome: 'Carlos Souza',
-        foto: '',
-        numero: '5596977776666',
-        mensagem: 'Oi Carlos! Gostaria de falar sobre a loja de Itajaí.'
+        nome: 'Carlos Eduardo',
+        foto: '/foto/carlos.webp',
+        numero: '554799241-3762',
+        mensagem: 'Olá, Carlos! Gostaria de um atendimento.'
+    },
+    {
+        nome: 'Camilly',
+        foto: '/foto/camilly.webp',
+        numero: '5547991866235',
+        mensagem: 'Olá, Camilly! Gostaria de um atendimento.'
+    },
+    {
+        nome: 'Ingrid',
+        foto: '/foto/ingrid.webp',
+        numero: '5547992876919',
+        mensagem: 'Olá, Ingrid! Gostaria de um atendimento.'
     }
 ];
 
