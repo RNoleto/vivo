@@ -13,19 +13,19 @@ const vendedores = [
     {
         nome: 'Pamella',
         foto: '/foto/pamella.webp',
-        numero: '554799143-4460',
+        numero: '5547991434460',
         mensagem: 'Olá, Pamella! Gostaria de um atendimento.'
     },
     {
         nome: 'Crisley',
         foto: '/foto/crisley.webp',
-        numero: '554799274-2740',
+        numero: '5547992742740',
         mensagem: 'Olá, Crisley! Gostaria de um atendimento.'
     },
     {
         nome: 'Carlos Eduardo',
         foto: '/foto/carlos.webp',
-        numero: '554799241-3762',
+        numero: '5547992413762',
         mensagem: 'Olá, Carlos! Gostaria de um atendimento.'
     },
     {
