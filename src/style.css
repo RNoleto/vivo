@@ -48,6 +48,16 @@ section{
   margin: auto 0;
 }
 
+/* Títulos */
+.title {
+  color: white;
+  margin-top: 0.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
 /* Footer discreto no final */
 footer {
   text-align: center;
@@ -64,14 +74,4 @@ footer a {
 
 footer a:hover {
   color: white;
-}
-
-/* Títulos */
-.title {
-  color: white;
-  margin-top: 0.5rem;
-}
-
-h1 {
-  margin: 0;
 }
