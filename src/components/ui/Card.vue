@@ -2,6 +2,7 @@
 defineProps({
   text: String,
   icon: String,
+  photo: String,
   link: String,
   internal: Boolean,
 });
@@ -17,7 +18,18 @@ defineProps({
     class="card"
   >
   <div class="icon-wrapper">
-    <img :src="icon" alt="icon" class="icon" />
+    <img
+        v-if="photo"
+        :src="photo"
+        alt="Foto"
+        class="photo"
+      />
+      <img
+        v-else
+        :src="icon"
+        alt="Ícone"
+        class="icon"
+      />
   </div>
     <p>{{ text }}</p>
   </component>
@@ -59,5 +71,13 @@ defineProps({
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+/* ✅ Estilo para foto circular */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 </style>

@@ -11,17 +11,20 @@ const voltar = () => {
 
 const vendedores = [
     {
-        nome: 'Gustavo Henrique',
-        numero: '559691724047',
-        mensagem: 'Olá, Gustavo! Gostaria de falar sobre a loja de Itajaí.'
+        nome: 'Pamella',
+        foto: '/foto/pamella.jpeg',
+        numero: '554799143-4460',
+        mensagem: 'Olá, Pamella! Gostaria de um atendimento.'
     },
     {
         nome: 'Juliana Silva',
+        foto: '',
         numero: '5596988889999',
         mensagem: 'Olá, Juliana! Gostaria de falar sobre a loja de Itajaí.'
     },
     {
         nome: 'Carlos Souza',
+        foto: '',
         numero: '5596977776666',
         mensagem: 'Oi Carlos! Gostaria de falar sobre a loja de Itajaí.'
     }
@@ -36,7 +39,7 @@ const gerarLinkWhatsapp = (numero, mensagem) => {
 <template>
     <section>
         <div v-for="vendedor in vendedores" :key="vendedor.numero">
-            <Card :text="vendedor.nome" icon="/icons/seller.svg"
+            <Card :text="vendedor.nome" :photo="vendedor.foto"
                 :link="gerarLinkWhatsapp(vendedor.numero, vendedor.mensagem)" />
         </div>
         <div class="botao-voltar-wrapper">
