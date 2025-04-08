@@ -1,7 +1,7 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 import Avaliacoes from '../views/Avaliacoes.vue';
-import Vendedores from '../views/Vendedores.vue';
+import Consultores from '../views/Consultores.vue';
 
 const routes = [
   {
@@ -10,9 +10,9 @@ const routes = [
     component: Avaliacoes
   },
   {
-    path: '/vendedores',
-    name: 'Vendedores',
-    component: Vendedores
+    path: '/consultores',
+    name: 'Consultores',
+    component: Consultores
   }
 ];
 
