@@ -9,11 +9,11 @@
     <router-view />
   </main>
 
-  <!-- <footer class="footer">
+  <footer class="footer">
     <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer">
       Desenvolvido por Ramon Noleto
     </a>
-  </footer> -->
+  </footer>
 </template>
 
 <script setup>
