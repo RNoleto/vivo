@@ -73,11 +73,11 @@ defineProps({
   object-fit: contain;
 }
 
-/* ✅ Estilo para foto circular */
 .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transform: scale(1.13);
 }
 </style>
