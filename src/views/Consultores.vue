@@ -9,44 +9,52 @@ const voltar = () => {
   router.push('/');
 };
 
-const vendedores = [
+let consultores = [
     {
         nome: 'Pamella',
         foto: '/foto/pamella.webp',
-        numero: '5547991434460',
-        mensagem: 'Olá, Pamella! Gostaria de um atendimento.'
+        numero: '5547991434460'
     },
     {
         nome: 'Crisley',
         foto: '/foto/crisley.webp',
-        numero: '5547992742740',
-        mensagem: 'Olá, Crisley! Gostaria de um atendimento.'
+        numero: '5547992742740'
     },
     {
         nome: 'Carlos Eduardo',
         foto: '/foto/carlos.webp',
-        numero: '5547992413762',
-        mensagem: 'Olá, Carlos! Gostaria de um atendimento.'
+        numero: '5547992413762'
     },
     {
         nome: 'Camilly',
         foto: '/foto/camilly.webp',
-        numero: '5547991866235',
-        mensagem: 'Olá, Camilly! Gostaria de um atendimento.'
+        numero: '5547991866235'
     },
     {
         nome: 'Ingrid',
         foto: '/foto/ingrid.webp',
-        numero: '5547992876919',
-        mensagem: 'Olá, Ingrid! Gostaria de um atendimento.'
+        numero: '5547992876919'
     },
     {
         nome: 'Gerusa',
         foto: '/foto/gerusa.webp',
-        numero: '5547984033499',
-        mensagem: 'Olá, Gerusa! Gostaria de um atendimento.'
+        numero: '5547984033499'
+    },
+    {
+        nome: 'Amauri',
+        foto: '/foto/amauri.webp',
+        numero: '5547992692973'
     }
 ];
+
+//Ordenar consultores em ordem alfabetica
+consultores.sort((a, b) => a.nome.localeCompare(b.nome))
+
+// Gerar mensagem dinamicamente
+consultores = consultores.map(c => ({
+    ...c,
+    mensagem: `Olá, ${c.nome}! Gostaria de um atendimento.`
+}))
 
 // Função para gerar link do WhatsApp com a mensagem
 const gerarLinkWhatsapp = (numero, mensagem) => {
@@ -56,9 +64,9 @@ const gerarLinkWhatsapp = (numero, mensagem) => {
 
 <template>
     <section>
-        <div v-for="vendedor in vendedores" :key="vendedor.numero">
-            <Card :text="vendedor.nome" :photo="vendedor.foto"
-                :link="gerarLinkWhatsapp(vendedor.numero, vendedor.mensagem)" />
+        <div v-for="consultor in consultores" :key="consultor.numero">
+            <Card :text="consultor.nome" :photo="consultor.foto"
+                :link="gerarLinkWhatsapp(consultor.numero, consultor.mensagem)" />
         </div>
         <div class="botao-voltar-wrapper">
             <button @click="voltar" class="voltar">← Voltar</button>
