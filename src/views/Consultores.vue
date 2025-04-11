@@ -44,6 +44,11 @@ let consultores = [
         nome: 'Amauri',
         foto: '/foto/amauri.webp',
         numero: '5547992692973'
+    },
+    {
+        nome: 'Laiane',
+        foto: '/foto/laiane.webp',
+        numero: '5547991008517'
     }
 ];
 
