@@ -21,11 +21,6 @@ let consultores = [
         numero: '5547992742740'
     },
     {
-        nome: 'Carlos Eduardo',
-        foto: '/foto/carlos.webp',
-        numero: '5547992413762'
-    },
-    {
         nome: 'Camilly',
         foto: '/foto/camilly.webp',
         numero: '5547991866235'
