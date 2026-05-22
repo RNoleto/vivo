@@ -25,11 +25,17 @@ defineProps({
         class="photo"
       />
       <img
-        v-else
+        v-else-if="icon"
         :src="icon"
         alt="Ícone"
         class="icon"
       />
+      <span
+        v-else
+        class="initial-placeholder"
+      >
+        {{ text ? text.charAt(0).toUpperCase() : '?' }}
+      </span>
   </div>
     <p>{{ text }}</p>
   </component>
@@ -65,6 +71,7 @@ defineProps({
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; /* Evita que o círculo seja achatado */
 }
 
 .icon-wrapper .icon {
@@ -79,5 +86,11 @@ defineProps({
   object-fit: cover;
   border-radius: 50%;
   transform: scale(1.13);
+}
+
+.initial-placeholder {
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 </style>

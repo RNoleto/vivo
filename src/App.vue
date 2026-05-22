@@ -13,6 +13,10 @@
     <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer">
       Desenvolvido por Ramon Noleto
     </a>
+    <span class="footer-divider">|</span>
+    <router-link to="/dashboard" class="admin-link">
+      Painel Admin
+    </router-link>
   </footer>
 </template>
 
@@ -37,5 +41,14 @@
   width: 50px;
   height: 50px;
   object-fit: contain;
+}
+
+.footer-divider {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.admin-link {
+  font-weight: bold;
 }
 </style>
