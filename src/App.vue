@@ -11,7 +11,7 @@
 
   <footer class="footer">
     <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer">
-      Desenvolvido por Ramon Noleto
+      Desenvolvido por RNoleto
     </a>
     <span class="footer-divider">|</span>
     <router-link to="/dashboard" class="admin-link">

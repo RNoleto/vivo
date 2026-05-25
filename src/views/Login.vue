@@ -17,7 +17,7 @@ const realizarLogin = () => {
   
   // Simular pequeno delay para dar feedback visual de carregamento
   setTimeout(() => {
-    if (username.value === 'noleto' && password.value === '95661913249') {
+    if (username.value === 'santana' && password.value === '02144060240') {
       sessionStorage.setItem('isAdminAuthenticated', 'true');
       router.push('/dashboard');
     } else {
