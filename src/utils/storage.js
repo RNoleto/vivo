@@ -75,3 +75,45 @@ export function removerConsultor(numero) {
   salvarConsultores(novaLista);
   return novaLista;
 }
+
+const LINKS_KEY = 'vivo_links';
+
+const DEFAULT_LINKS = [
+  {
+    id: 'google',
+    text: 'Nos avalie no Google',
+    icon: '/icons/maps.svg',
+    link: 'https://g.co/kgs/C9xaEaS'
+  },
+  {
+    id: 'iphone',
+    text: 'App Vivo para iPhone',
+    icon: '/icons/apple.svg',
+    link: 'https://apps.apple.com/br/app/vivo/id475915064'
+  },
+  {
+    id: 'android',
+    text: 'App Vivo para Android',
+    icon: '/icons/android.svg',
+    link: 'https://play.google.com/store/apps/details?id=br.com.vivo'
+  }
+];
+
+export function obterLinks() {
+  const dados = localStorage.getItem(LINKS_KEY);
+  if (!dados) {
+    salvarLinks(DEFAULT_LINKS);
+    return DEFAULT_LINKS;
+  }
+  try {
+    return JSON.parse(dados);
+  } catch (e) {
+    console.error('Erro ao analisar os links no localStorage:', e);
+    return DEFAULT_LINKS;
+  }
+}
+
+export function salvarLinks(lista) {
+  localStorage.setItem(LINKS_KEY, JSON.stringify(lista));
+}
+

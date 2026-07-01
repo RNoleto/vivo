@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import { obterConsultores, adicionarConsultor, removerConsultor } from '../utils/storage.js';
+import { obterConsultores, adicionarConsultor, removerConsultor, obterLinks, salvarLinks } from '../utils/storage.js';
 
 const router = useRouter();
 
@@ -13,18 +13,24 @@ const fotoBase64 = ref('');
 const erroForm = ref('');
 const mensagemSucesso = ref('');
 
+// Estados de Links
+const links = ref([]);
+const mensagemSucessoLinks = ref('');
+
 // Modal de confirmação
 const mostrarConfirmacao = ref(false);
 const consultorParaDeletar = ref(null);
 
-// Carregar consultores
+// Carregar consultores e links
 const atualizarLista = () => {
   consultores.value = obterConsultores().sort((a, b) => a.nome.localeCompare(b.nome));
 };
 
 onMounted(() => {
   atualizarLista();
+  links.value = obterLinks();
 });
+
 
 // Manipulador de upload de foto
 const handleFotoUpload = (event) => {
@@ -129,6 +135,15 @@ const deslogar = () => {
 
 const irParaHome = () => {
   router.push('/');
+};
+
+// Salvar links
+const salvarAlteracoesLinks = () => {
+  salvarLinks(links.value);
+  mensagemSucessoLinks.value = 'Links salvos com sucesso!';
+  setTimeout(() => {
+    mensagemSucessoLinks.value = '';
+  }, 3000);
 };
 </script>
 
@@ -256,6 +271,51 @@ const irParaHome = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Edição de Links do Site -->
+      <div class="card-painel">
+        <h3>Editar Links do Site</h3>
+        
+        <form @submit.prevent="salvarAlteracoesLinks" class="form-cadastro">
+          <div v-for="(item, index) in links" :key="item.id" class="link-edit-group">
+            <div class="link-header-row">
+              <span class="link-icon-preview-wrapper">
+                <img :src="item.icon" :alt="item.text" class="link-icon-preview" />
+              </span>
+              <span class="link-identifier">
+                {{ item.id === 'google' ? 'Avaliação do Google' : item.id === 'iphone' ? 'App Store (iPhone)' : 'Play Store (Android)' }}
+              </span>
+            </div>
+            
+            <div class="link-inputs-row">
+              <div class="input-subgroup">
+                <label :for="'link-text-' + index">Texto do Card</label>
+                <input 
+                  type="text" 
+                  :id="'link-text-' + index" 
+                  v-model="item.text" 
+                  required
+                />
+              </div>
+              <div class="input-subgroup">
+                <label :for="'link-url-' + index">Link de Destino (URL)</label>
+                <input 
+                  type="text" 
+                  :id="'link-url-' + index" 
+                  v-model="item.link" 
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div v-if="mensagemSucessoLinks" class="success-message">
+            {{ mensagemSucessoLinks }}
+          </div>
+
+          <button type="submit" class="btn-cadastrar">Salvar Links</button>
+        </form>
       </div>
     </div>
 
@@ -775,5 +835,90 @@ const irParaHome = () => {
 @keyframes scaleUp {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* Estilos de Edição de Links */
+.link-edit-group {
+  border-bottom: 1px solid #f3e5f5;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.link-edit-group:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+
+.link-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.link-icon-preview-wrapper {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #5A50B3 0%, #874DA2 50%, #B24890 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.link-icon-preview {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.link-identifier {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #78009D;
+}
+
+.link-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 500px) {
+  .link-inputs-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input-subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-subgroup label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #5A50B3;
+}
+
+.input-subgroup input {
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #78009D;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-subgroup input:focus {
+  border-color: #5A50B3;
+  box-shadow: 0 0 8px rgba(90, 80, 179, 0.2);
 }
 </style>
