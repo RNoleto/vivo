@@ -10,13 +10,27 @@
   </main>
 
   <footer class="footer">
-    <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer">
-      Desenvolvido por RNoleto
-    </a>
-    <span class="footer-divider">|</span>
-    <router-link to="/dashboard" class="admin-link">
-      Painel Admin
-    </router-link>
+    <div class="footer-divider-line"></div>
+    <div class="footer-container">
+      <div class="footer-info">
+        <span>&copy; 2026 Loja Vivo Itajaí. Todos os direitos reservados.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://rnoleto.vercel.app" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="footer-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Desenvolvido por RNoleto
+        </a>
+        <span class="divider-dot">&bull;</span>
+        <router-link to="/dashboard" class="footer-link">
+          <svg xmlns="http://www.w3.org/2000/svg" class="footer-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          Painel Admin
+        </router-link>
+      </div>
+    </div>
   </footer>
 </template>
 
@@ -41,14 +55,5 @@
   width: 50px;
   height: 50px;
   object-fit: contain;
-}
-
-.footer-divider {
-  margin: 0 0.5rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.admin-link {
-  font-weight: bold;
 }
 </style>
